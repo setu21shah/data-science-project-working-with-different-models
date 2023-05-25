@@ -1,2 +1,3 @@
-# data-science-working-with-model
+# data-science-project-working-with-different-models
+
 Correctly predicting default candidates
