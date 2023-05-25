@@ -1,0 +1,51 @@
+Logistic Regression - I have chosen logistic regression as i was told to do so
+		      Before when the algorithm was fitted and trained the accuracy upon prediction was only 56% ( This is not measured by AUC )		
+		      GridsearchCV took 49 seconds 
+		      It got 75% Accuracy ( This is not measured by AUC ).
+		      I just wanted to check the accuracy before moving on to AUC.
+		      Logistic Regression was the The model which performed better when it came to the AUC Score and confusion matrix as it was able to predict the 1's more often rather than predicting it 0.
+		      I had to choose to not to go for scaling becuase when i did the AUC, Accuracy and Confusion matrix kept on getting worse.
+
+
+RandomForestClassifier - Scaling was done on dataset and atleast one from both of our model was affected positively and negatively by the scaling. But i beleive that if there is standarization then Random Forest Would have been able 
+			 to reduce the number of false negative on the minor class but with standarization our logistic regression's false negative increases. Random Forest Performed much slower when compared to logistic regression. Yet 
+			 the output was the same. 
+			 I beleive if we did the scaling random forest would have been able to out perform logistic regression but it would ruin the performance of Logistic Regression. So i decided to find middle point and
+			 maintained the performance of both of the models. 
+			 I decided to choose this algorithm is because as we did not remove or scale the outliers because we had to create 2 models. Tree Based algorithms are robust to outliers. Hence i went for XGBoost earlier but 
+			 decided to drop it due to accuracy issues and finally ended up sticking with RandomForest Classifier.
+			 GridSearchCV took 3 hours on my computer.
+		      
+
+Question - Are there choices you made in the context of the exercise that might be different in a business context?
+
+Answer - Yes, There were many choices i made in the context of the exercise that would surely differ in a  business context. First of all i did not remove any of the outliers, if it was not for the exercise i would have given a 
+	 set range mostly through percentile and would have removed the data outside of the range. yes that would have resulted in loss of data but i believe that the quality of the data would have been much higher, cleaner and workable.
+	 I would compare the base AUC of 2 or 3 models but would always clean and prepare the data for only one model and tune that model too for the best results. I was bound to make rules in order to maintain the performance of 
+	 both of the models. I am sure that if i were to make different choices i was have pushed myself to make only one model but the performance would have been the top notch.
+
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+Model's - I choose before Random Forest Classifier.
+
+
+Knn Classifier - I choose this classifier as it's algorithm is simple and as i have standarized the values and the algorithm uses euclidean distance to get the 'n nearest neighbors' then it goes on to decide the output.
+		 Knn classifier was very computationally expensive, The Grid Search CV Too very very long 
+		 It is due to the dimension of data being high ( 30 features ). Knn usually performs better with lower number of dimensions
+		 But as we were not allowed to remove any of the columns i decided not to do so.
+		 Out of 1440 tasks. 17 tasks took 7.4 minutes hence i decided to switch my other model from KNN to XGBoost
+
+
+XGBoost - I decided to go with xgboost as it is robust to outliers and have a dataset that is full of outliers, XGBoost's performance does not decrease with respect to increase in number of features/dimensions. 
+	  XGboost uses Gradient Descent which does shine when there is more data and we do have a huge dataset.
+	  GridsearchCV took 44.5 mins and no improvement in our accuracy.
+	  I Decided to go for random forest regressor as XGBoost's AUC was not as high as i was expecting
+
+
+
+----
+Outliers - widely spreaded 
+50-60% data is outliers so we cannot delete - would loose a lot of data
+
+Cross validation - how accurate it is to check on the validation dataset
